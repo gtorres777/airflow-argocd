@@ -16,17 +16,17 @@ spec:
     chart: airflow
     helm:
       parameters:
-        - name: defaultAirflowTag
+        - name: "defaultAirflowTag"
           value: '2.8.1'
-        - name: airflowVersion
+        - name: "airflowVersion"
           value: '2.8.1'
-        - name: fernetKey
+        - name: "fernetKey"
           value: 'zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI='
-        - name: executor
+        - name: "executor"
           value: 'KubernetesExecutor'
-        - name: createUserJob.useHelmHooks
+        - name: "createUserJob.useHelmHooks"
           value: 'false'
-        - name: migrateDatabaseJob.useHelmHooks
+        - name: "migrateDatabaseJob.useHelmHooks"
           value: 'false'
   project: default
   syncPolicy:
