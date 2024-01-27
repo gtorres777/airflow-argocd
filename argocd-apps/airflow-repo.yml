@@ -17,19 +17,19 @@ spec:
     helm:
       parameters:
         - name: "defaultAirflowTag"
-          value: '2.5.1'
+          value: '2.8.1'
         - name: "airflowVersion"
-          value: '2.5.1'
+          value: '2.8.1'
         - name: "fernetKey"
           value: 'zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI='
         - name: "executor"
           value: 'KubernetesExecutor'
         - name: "createUserJob.useHelmHooks"
-          value: 'false'
+          value: 'true'
         - name: "migrateDatabaseJob.useHelmHooks"
-          value: 'false'
+          value: 'true'
         - name: "AIRFLOW__CORE__LOAD_EXAMPLES"
-          value: "False"
+          value: "True"
         - name: "AIRFLOW__KUBERNETES_EXECUTOR__NAMESPACE"
           value: "airflow"
         - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_REPOSITORY"
