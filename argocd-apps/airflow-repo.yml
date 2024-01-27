@@ -31,7 +31,7 @@ spec:
         - name: "AIRFLOW__CORE__LOAD_EXAMPLES"
           value: "False"
         - name: "AIRFLOW__KUBERNETES_EXECUTOR__NAMESPACE"
-          value: "dev"
+          value: "airflow"
         - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_REPOSITORY"
           value: "apache/airflow"
         - name: "AIRFLOW__KUBERNETES_EXECUTOR__WORKER_CONTAINER_TAG"
