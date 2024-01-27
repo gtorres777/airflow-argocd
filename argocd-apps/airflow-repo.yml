@@ -1,8 +1,37 @@
-apiVersion: source.toolkit.fluxcd.io/v1beta2
-kind: HelmRepository
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: apache-airflow
-  namespace: argocd
+  name: airflow
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
 spec:
-  interval: 1m
-  url: https://airflow.apache.org/
+  destination:
+    name: ''
+    namespace: airflow
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: ''
+    repoURL: 'https://airflow.apache.org'
+    targetRevision: v1.7.0
+    chart: airflow
+    helm:
+      parameters:
+        - name: defaultAirflowTag
+          value: '2.8.1'
+        - name: airflowVersion
+          value: '2.8.1'
+        - name: fernetKey
+          value: 'zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI='
+        - name: executor
+          value: 'KubernetesExecutor'
+        - name: createUserJob.useHelmHooks
+          value: 'false'
+        - name: migrateDatabaseJob.useHelmHooks
+          value: 'false'
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
