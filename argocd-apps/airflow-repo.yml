@@ -20,8 +20,8 @@ spec:
           value: '2.5.1'
         - name: "airflowVersion"
           value: '2.5.1'
-        # - name: "fernetKey"
-        #   value: 'zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI='
+        - name: "fernetKey"
+          value: 'zTxhk7FuGqQVPZVoukLn5bGWOrgHzhQnBnaqAItcZGI='
         - name: "executor"
           value: 'KubernetesExecutor'
         - name: "createUserJob.useHelmHooks"
